@@ -3,5 +3,58 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout>
-	<h1>Elian Kasteleiner</h1>
+	<div class='p-sm xl:p-lg'>
+		<div
+			class='grid grid-cols-[auto_auto_1fr_auto] grid-rows-[auto_auto_auto] gap-x-md xl:gap-x-lg gap-y-lg'>
+			<div class='w-[1px] border-r border-stroke h-full row-span-full col-start-2'></div>
+			<div class='h-full row-span-full col-start-4'>
+				<a
+					href='mailto:e.kasteleiner@outlook.de'
+					target='_blank'
+					>Mail</a
+				>
+			</div>
+			<div class='flex flex-col gap-sm'>
+				<div>Elian Kasteleiner</div>
+				<div>23 Jahre</div>
+				<div>Kassel</div>
+			</div>
+			<div class='flex flex-col gap-sm'>
+				<div class='title'>Web-Entwickler</div>
+				<div>
+					Freelancer <a
+						target='_blank'
+						href='https://apesolute.com/'
+						>@apesolute</a
+					>
+				</div>
+				<div>Student für XR Design & Entwicklung</div>
+			</div>
+			<div><h2 class='title'>Projekte</h2></div>
+			<div>Projekte...</div>
+			<div><h2 class='title'>Über mich</h2></div>
+			<div class='flex flex-col gap-sm'>
+				<span>
+					<a
+						target='_blank'
+						href='#'
+						>Lebenslauf</a
+					> |
+					<a
+						target='_blank'
+						href='#'
+						>Github</a
+					>
+				</span>
+				<div class='flex flex-col gap-sm max-w-paragraph'>
+					<p>Ich arbeite seit ca. 4 Jahren selbstständig an Web-Projekten als Entwickler.</p>
+					<p>Immer wieder wirke ich auch bei der Konzeption und dem Design mit.</p>
+					<p>
+						Neben der Webentwicklung bin ich aktiv am lernen neuer XR Technologien und beschäftige
+						mich mit Unity und C#.
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
 </Layout>
