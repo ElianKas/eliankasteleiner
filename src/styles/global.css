@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+@theme {
+    
+}
+
+html, body {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 400;
+}
