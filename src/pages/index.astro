@@ -5,15 +5,22 @@ import Layout from '../layouts/Layout.astro';
 <Layout>
 	<div class='p-sm xl:p-lg'>
 		<div
-			class='grid grid-cols-[auto_auto_1fr_auto] grid-rows-[auto_auto_auto] gap-x-md xl:gap-x-lg gap-y-lg'>
-			<div class='w-[1px] border-r border-stroke h-full row-span-full col-start-2'></div>
-			<div class='h-full row-span-full col-start-4'>
+			class='flex flex-col gap-md sm:grid grid-cols-[auto_auto_1fr_auto] grid-rows-[auto_auto_auto] sm:gap-x-md xl:gap-x-lg sm:gap-y-lg'>
+			<div class='max-sm:hidden w-[1px] border-r border-stroke h-full row-span-full col-start-2'>
+			</div>
+			<div class='max-sm:hidden h-full row-span-full col-start-4'>
 				<a
 					href='mailto:e.kasteleiner@outlook.de'
 					target='_blank'
 					>Mail</a
 				>
 			</div>
+			<a
+				class='sm:hidden fixed top-sm right-sm bg-bg'
+				href='mailto:e.kasteleiner@outlook.de'
+				target='_blank'
+				>Mail</a
+			>
 			<div class='flex flex-col gap-sm'>
 				<div>Elian Kasteleiner</div>
 				<div>23 Jahre</div>
