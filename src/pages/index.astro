@@ -1,11 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Card1 from '../components/ui/card1.astro';
+import Card2 from '../components/ui/card2.astro';
+import Card3 from '../components/ui/card3.astro';
 ---
 
 <Layout>
-	<div class='p-sm xl:p-lg'>
+	<div class='p-sm xl:py-md'>
 		<div
-			class='flex flex-col gap-md sm:grid grid-cols-[auto_auto_1fr_auto] grid-rows-[auto_auto_auto] sm:gap-x-md xl:gap-x-lg sm:gap-y-lg'>
+			class='flex flex-col gap-md sm:grid grid-cols-[auto_auto_1fr_auto] grid-rows-[auto_auto_auto] sm:gap-x-md sm:gap-y-lg'>
 			<div class='max-sm:hidden w-[1px] border-r border-stroke h-full row-span-full col-start-2'>
 			</div>
 			<div class='max-sm:hidden h-full row-span-full col-start-4'>
@@ -21,7 +24,7 @@ import Layout from '../layouts/Layout.astro';
 				target='_blank'
 				>Mail</a
 			>
-			<div class='flex flex-col gap-sm'>
+			<div class='flex flex-col gap-sm text-nowrap'>
 				<div>Elian Kasteleiner</div>
 				<div>23 Jahre</div>
 				<div>Kassel</div>
@@ -38,7 +41,11 @@ import Layout from '../layouts/Layout.astro';
 				<div>Student für XR Design & Entwicklung</div>
 			</div>
 			<div><h2 class='title'>Projekte</h2></div>
-			<div>Projekte...</div>
+			<div class='flex gap-lg flex-wrap text-sm pl-sm'>
+				<Card1 />
+				<Card2 />
+				<Card3 />
+			</div>
 			<div><h2 class='title'>Über mich</h2></div>
 			<div class='flex flex-col gap-sm'>
 				<span>

@@ -4,10 +4,13 @@
     --color-bg: #D9D9D9;
     --color-text: #000000;
     --color-stroke: #A5A5A5;
+    --color-pin: #525252;
     --spacing-sm: 1rem;
     --spacing-md: 2rem;
     --spacing-lg: 6rem;
     --spacing-paragraph: 500px;
+    --text-sm: 12px;
+    --shadow-md-strong: 0 4px 6px rgba(0, 0, 0, 0.4);
 }
 
 @layer components {
