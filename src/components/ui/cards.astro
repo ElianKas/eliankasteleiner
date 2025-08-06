@@ -1,0 +1,85 @@
+---
+import Card from './card.astro';
+---
+
+<div
+	class='flex gap-lg items-start max-sm:flex-col max-sm:items-center flex-wrap text-sm sm:pl-sm max-sm:pb-md text-white'>
+	<Card
+		imageSrc='/images/khkcommunity.png'
+		class='rotate-[-4.5deg]'>
+		<div
+			slot='pin'
+			class='group-hover:hidden bg-[#F0A11D] shadow-md-strong w-[20px] aspect-square absolute top-[-8px] right-[120px] rounded-full'>
+		</div>
+		<Fragment slot='preview'>
+			<h2 class='title'>khk.community</h2>
+			<div>Typescript | Supabase | Sharp</div>
+		</Fragment>
+		<Fragment slot='details'>
+			<h2 class='title'>khk.community</h2>
+			<div>Typescript | Supabase | Sharp</div>
+			<p>
+				Eine Community-Plattform für Kunsthochschule Kassel, die es Studierenden ermöglicht, sich zu
+				vernetzen und auszutauschen.
+			</p>
+			<p>
+				Die Plattform bietet Funktionen wie einen anonymen Live-Chat mit Like-Funktion und eine
+				Uploadmaske für Studenten, um ihre Events zu teilen.
+			</p>
+			<p>
+				Entwickelt wurde die Plattform mit Nuxt und TypeScript. Für Events und Chat wurden Supabase
+				tables und storage buckets eingesetzt. Sharp wird als Bild-Kompressor verwendet.
+			</p>
+		</Fragment>
+	</Card>
+	<Card
+		imageSrc='/images/digitaleperspektiven.png'
+		class='rotate-[3.5deg]'>
+		<div
+			slot='pin'
+			class='bg-[#1D86F0] shadow-md-strong w-[20px] aspect-square absolute top-[-5px] left-[110px] rounded-full'>
+		</div>
+		<Fragment slot='preview'>
+			<h2 class='title'>Digitale Perspektiven</h2>
+			<div>Nuxt | Tailwind | Gsap</div>
+		</Fragment>
+		<Fragment slot='details'>
+			<h2 class='title'>Digitale Perspektiven</h2>
+			<div>Nuxt | Tailwind | Gsap</div>
+			<p>
+				Ein interaktives Webprojekt, das die digitale Transformation in der Kunst- und
+				Designausbildung thematisiert.
+			</p>
+			<p>
+				Die Seite bietet eine ansprechende Benutzeroberfläche mit Animationen und interaktiven
+				Elementen, um die Inhalte lebendig zu präsentieren.
+			</p>
+			<p>Entwickelt mit Nuxt, Tailwind CSS für das Styling und GSAP für die Animationen.</p>
+		</Fragment>
+	</Card>
+	<Card
+		imageSrc='/images/afrika.png'
+		class='rotate-[-7deg]'>
+		<div
+			slot='pin'
+			class='bg-[#EF5F1D] shadow-md-strong w-[20px] aspect-square absolute top-[-6px] right-[70px] rounded-full'>
+		</div>
+		<Fragment slot='preview'>
+			<h2 class='title'>Miteinander für Afrika</h2>
+			<div>Nuxt | Storyblok | Nodemailer</div>
+		</Fragment>
+		<Fragment slot='details'>
+			<h2 class='title'>Miteinander für Afrika</h2>
+			<div>Nuxt | Storyblok | Nodemailer</div>
+			<p>Ein Webprojekt, das sich für die Unterstützung von Menschen in Afrika einsetzt.</p>
+			<p>
+				Die Seite bietet eine ansprechende Benutzeroberfläche mit Animationen und interaktiven
+				Elementen, um die Inhalte lebendig zu präsentieren.
+			</p>
+			<p>
+				Entwickelt mit Nuxt, Storyblok für das Content-Management und Nodemailer für das
+				E-Mail-Management.
+			</p>
+		</Fragment>
+	</Card>
+</div>
