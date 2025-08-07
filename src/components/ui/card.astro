@@ -24,11 +24,15 @@ const { imageSrc, website, github, class: className } = Astro.props;
 				href={website}
 				target='_blank'
 				>Webseite</a
-			> | <a
-				href={github}
-				target='_blank'
-				>Github</a
-			>
+			>{
+				github && (
+					<a
+						href={github}
+						target='_blank'>
+						| Github
+					</a>
+				)
+			}
 		</div>
 	</div>
 </div>
