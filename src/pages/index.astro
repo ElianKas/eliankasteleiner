@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Cards from '../components/ui/cards.astro';
+import Dropdown from '../components/svg/dropdown.astro';
 ---
 
 <Layout>
@@ -40,21 +41,30 @@ import Cards from '../components/ui/cards.astro';
 			</div>
 			<div><h2 class='title'>Web-Projekte</h2></div>
 			<Cards />
-			<div tabindex='0'><h2 class='title'>Über mich</h2></div>
+			<div tabindex='0'>
+				<div
+					class='flex items-center cursor-pointer'
+					id='about-me'>
+					<h2 class='title'>Über mich</h2>
+					<Dropdown class='rotate-180' />
+				</div>
+			</div>
 			<div
+				id='about-me-content'
 				tabindex='0'
-				class='flex flex-col gap-sm'>
+				class='hidden flex flex-col gap-sm'>
 				<span>
 					<a
 						target='_blank'
-						href='#'
-						>Lebenslauf</a
-					> |
+						href='#'>
+						Lebenslauf
+					</a>{' '}
+					|
 					<a
 						target='_blank'
-						href='https://github.com/ElianKas'
-						>Github</a
-					>
+						href='https://github.com/ElianKas'>
+						Github
+					</a>
 				</span>
 				<div class='flex flex-col gap-sm max-w-paragraph'>
 					<p>Ich arbeite seit ca. 2 Jahren selbstständig an Web-Projekten als Entwickler.</p>
@@ -68,3 +78,12 @@ import Cards from '../components/ui/cards.astro';
 		</div>
 	</div>
 </Layout>
+<script>
+	const aboutMe = document.getElementById('about-me');
+	const aboutMeContent = document.getElementById('about-me-content');
+	const aboutMeIcon = document.getElementById('about-me-icon');
+	aboutMe?.addEventListener('click', () => {
+		aboutMeContent?.classList.toggle('hidden');
+		aboutMeIcon?.classList.toggle('rotate-180');
+	});
+</script>
