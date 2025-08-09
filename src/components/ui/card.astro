@@ -4,7 +4,7 @@ const { imageSrc, website, github, class: className } = Astro.props;
 
 <div
 	tabindex='0'
-	class={`${className} aspect-[4/5]  w-[290px] py-[25px] px-[20px] flex flex-col gap-sm shadow-md relative group hover:rotate-0 focus:rotate-0`}>
+	class={`${className} aspect-[4/5]  w-[290px] py-[25px] px-[20px] flex flex-col gap-sm shadow-md relative group hover:rotate-0 focus:rotate-0 grow-0`}>
 	<slot name='pin' />
 	<div class='aspect-square w-full group-hover:hidden group-focus:hidden'>
 		<img
