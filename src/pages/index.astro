@@ -5,7 +5,7 @@ import Dropdown from '../components/svg/dropdown.astro';
 ---
 
 <Layout>
-	<div class='p-sm xl:py-md'>
+	<div class='p-sm py-md'>
 		<div
 			class='flex flex-col gap-md sm:grid grid-cols-[auto_auto_1fr_auto] grid-rows-[auto_auto_auto] sm:gap-x-md sm:gap-y-lg'>
 			<div class='max-sm:hidden w-[1px] border-r border-stroke h-full row-span-full col-start-2'>
@@ -18,7 +18,7 @@ import Dropdown from '../components/svg/dropdown.astro';
 				>
 			</div>
 			<a
-				class='sm:hidden fixed top-sm right-sm bg-bg pl-xs z-[99]'
+				class='sm:hidden fixed top-md right-sm bg-bg pl-xs z-[99]'
 				href='mailto:e.kasteleiner@outlook.de'
 				target='_blank'
 				>Mail</a
@@ -39,14 +39,25 @@ import Dropdown from '../components/svg/dropdown.astro';
 				</div>
 				<div>Student für XR Design & Entwicklung</div>
 			</div>
-			<div><h2 class='title'>Web-Projekte</h2></div>
+			<div>
+				<div
+					class='flex items-center cursor-pointer'
+					id='projects'>
+					<h2 class='title'>Projektauswahl</h2>
+					<Dropdown class='projects-icon rotate-180' />
+				</div>
+			</div>
 			<Cards />
+			<div
+				class='hidden'
+				id='projects-content-shadow'>
+			</div>
 			<div tabindex='0'>
 				<div
 					class='flex items-center cursor-pointer'
 					id='about-me'>
 					<h2 class='title'>Über mich</h2>
-					<Dropdown class='rotate-180' />
+					<Dropdown class='about-me-icon' />
 				</div>
 			</div>
 			<div
@@ -81,9 +92,20 @@ import Dropdown from '../components/svg/dropdown.astro';
 <script>
 	const aboutMe = document.getElementById('about-me');
 	const aboutMeContent = document.getElementById('about-me-content');
-	const aboutMeIcon = document.getElementById('about-me-icon');
+	const aboutMeIcon = document.querySelector('.about-me-icon');
 	aboutMe?.addEventListener('click', () => {
 		aboutMeContent?.classList.toggle('hidden');
 		aboutMeIcon?.classList.toggle('rotate-180');
+	});
+</script>
+<script>
+	const projects = document.getElementById('projects');
+	const projectsContent = document.getElementById('projects-content');
+	const projectsShadow = document.getElementById('projects-content-shadow');
+	const projectsIcon = document.querySelector('.projects-icon');
+	projects?.addEventListener('click', () => {
+		projectsContent?.classList.toggle('hidden');
+		projectsShadow?.classList.toggle('hidden');
+		projectsIcon?.classList.toggle('rotate-180');
 	});
 </script>
