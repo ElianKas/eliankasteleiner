@@ -2,7 +2,9 @@
 
 @theme {
     --color-bg: #D9D9D9;
-    --color-primary: rgb(56, 56, 44);
+    --color-primary: #c6403f;
+    --color-secondary: #ddde92;
+    --color-accent: #a7d269;
     --color-stroke: #A5A5A5;
     --spacing-sm: 1rem;
     --spacing-md: 2rem;

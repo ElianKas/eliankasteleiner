@@ -4,12 +4,37 @@ import Card from './card.astro';
 
 <div
 	tabindex='0'
-	class='flex gap-lg items-start max-sm:flex-col max-sm:items-center flex-wrap text-sm sm:pl-sm max-sm:pb-md text-white'>
+	class='flex gap-lg items-start max-sm:flex-col max-sm:items-center flex-wrap text-sm sm:pl-sm max-sm:pb-md'>
+	<Card
+		website='https://www.digitaleperspektiven.net/'
+		imageSrc='/images/digitaleperspektiven.png'
+		class='rotate-[3.5deg] bg-primary'>
+		<div
+			slot='pin'
+			class='group-hover:hidden group-focus:hidden bg-[#8053ea] shadow-md-strong w-[20px] aspect-square absolute top-[-5px] left-[110px] rounded-full'>
+		</div>
+		<Fragment slot='preview'>
+			<h2 class='title'>Digitale Perspektiven</h2>
+			<div>Nuxt | Tailwind | Gsap</div>
+		</Fragment>
+		<Fragment slot='details'>
+			<h2 class='title'>Digitale Perspektiven</h2>
+			<p>
+				Ein interaktives Webprojekt, das die digitale Transformation in der Kunst- und
+				Designausbildung thematisiert.
+			</p>
+			<p>
+				Die Seite bietet eine ansprechende Benutzeroberfläche mit Animationen und interaktiven
+				Elementen, um die Inhalte lebendig zu präsentieren.
+			</p>
+			<p>Entwickelt mit Nuxt, Tailwind CSS für das Styling und GSAP für die Animationen.</p>
+		</Fragment>
+	</Card>
 	<Card
 		website='https://www.khk.community/'
 		github='https://github.com/ElianKas/uni-network-nuxt'
 		imageSrc='/images/khkcommunity.png'
-		class='rotate-[-4.5deg]'>
+		class='rotate-[-4.5deg] bg-secondary'>
 		<div
 			slot='pin'
 			class='group-hover:hidden group-focus:hidden bg-[#F0A11D] shadow-md-strong w-[20px] aspect-square absolute top-[-8px] right-[120px] rounded-full'>
@@ -35,34 +60,9 @@ import Card from './card.astro';
 		</Fragment>
 	</Card>
 	<Card
-		website='https://www.digitaleperspektiven.net/'
-		imageSrc='/images/digitaleperspektiven.png'
-		class='rotate-[3.5deg]'>
-		<div
-			slot='pin'
-			class='group-hover:hidden group-focus:hidden bg-[#1D86F0] shadow-md-strong w-[20px] aspect-square absolute top-[-5px] left-[110px] rounded-full'>
-		</div>
-		<Fragment slot='preview'>
-			<h2 class='title'>Digitale Perspektiven</h2>
-			<div>Nuxt | Tailwind | Gsap</div>
-		</Fragment>
-		<Fragment slot='details'>
-			<h2 class='title'>Digitale Perspektiven</h2>
-			<p>
-				Ein interaktives Webprojekt, das die digitale Transformation in der Kunst- und
-				Designausbildung thematisiert.
-			</p>
-			<p>
-				Die Seite bietet eine ansprechende Benutzeroberfläche mit Animationen und interaktiven
-				Elementen, um die Inhalte lebendig zu präsentieren.
-			</p>
-			<p>Entwickelt mit Nuxt, Tailwind CSS für das Styling und GSAP für die Animationen.</p>
-		</Fragment>
-	</Card>
-	<Card
 		website='https://www.miteinander-fuer-afrika.de/'
 		imageSrc='/images/afrika.png'
-		class='rotate-[-7deg]'>
+		class='rotate-[-7deg] bg-accent'>
 		<div
 			slot='pin'
 			class='group-hover:hidden group-focus:hidden bg-[#EF5F1D] shadow-md-strong w-[20px] aspect-square absolute top-[-6px] right-[70px] rounded-full'>
