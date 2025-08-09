@@ -17,7 +17,7 @@ const { imageSrc, website, github, class: className } = Astro.props;
 		<slot name='preview' />
 	</div>
 	<div
-		class='customScroll hidden flex-col gap-sm group-hover:flex group-focus:flex h-full overflow-y-auto'>
+		class='customScroll hidden flex-col gap-sm group-hover:flex group-focus:flex h-full overflow-y-auto grow-0 border'>
 		<slot name='details' />
 		<div>
 			<a
