@@ -1,9 +1,9 @@
 @import "tailwindcss";
 
 @theme {
-    --color-bg: #D9D9D9;
+    --color-bg: #fcf2f2;
     --color-primary: #ff644f;
-    --color-secondary: #ddde92;
+    --color-secondary: #f8cd73;
     --color-accent: #a7d269;
     --color-stroke: #A5A5A5;
     --spacing-xs: 0.5rem;
@@ -11,7 +11,8 @@
     --spacing-md: 2rem;
     --spacing-lg: 6rem;
     --spacing-paragraph: 500px;
-    --text-sm: 12px;
+    --text-xs: 12px;
+    --text-sm: 14px;
     --shadow-md-strong: 0 4px 6px rgba(0, 0, 0, 0.4);
 }
 

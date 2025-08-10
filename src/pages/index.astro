@@ -7,44 +7,23 @@ import Dropdown from '../components/svg/dropdown.astro';
 <Layout>
 	<div class='p-sm py-md'>
 		<div
-			class='flex flex-col gap-md sm:grid grid-cols-[auto_auto_1fr_auto] grid-rows-[auto_auto_auto] sm:gap-x-md sm:gap-y-lg'>
+			class='flex flex-col gap-md sm:grid grid-cols-[auto_auto_1fr] grid-rows-[auto_auto_auto] sm:gap-x-md sm:gap-y-lg'>
 			<div class='max-sm:hidden w-[1px] border-r border-stroke h-full row-span-full col-start-2'>
 			</div>
-			<div class='max-sm:hidden h-full row-span-full col-start-4'>
-				<a
-					href='mailto:e.kasteleiner@outlook.de'
-					target='_blank'
-					>Mail</a
-				>
-			</div>
-			<a
-				class='sm:hidden fixed top-md right-sm bg-bg pl-xs z-[99]'
-				href='mailto:e.kasteleiner@outlook.de'
-				target='_blank'
-				>Mail</a
-			>
-			<div class='flex flex-col gap-sm text-nowrap'>
-				<div>Elian Kasteleiner</div>
-				<div>23 Jahre</div>
-				<div>Kassel</div>
-			</div>
-			<div class='flex flex-col gap-sm'>
-				<div class='title'>Web-Entwickler</div>
-				<div>
-					Freelancer <a
-						target='_blank'
-						href='https://apesolute.com/'
-						>@apesolute</a
-					>
-				</div>
-				<div>Student für XR Design & Entwicklung</div>
-			</div>
-			<div>
+			<div class='title'>Web-Entwickler <br /> Portfolio</div>
+			<div>Elian Kasteleiner</div>
+			<div class='flex flex-col gap-md'>
 				<div
 					class='flex items-center cursor-pointer'
 					id='projects'>
 					<h2 class='title'>Projektauswahl</h2>
 					<Dropdown class='projects-icon rotate-180' />
+				</div>
+				<div class='pl-sm flex flex-col gap-sm text-sm'>
+					<div class='hover:font-bold'>Digitale Perspektiven</div>
+					<div class='hover:font-bold'>khk.community</div>
+					<div class='hover:font-bold'>Miteinander für Afrika</div>
+					<div class='hover:font-bold'>SmartOPS</div>
 				</div>
 			</div>
 			<Cards />
@@ -52,34 +31,47 @@ import Dropdown from '../components/svg/dropdown.astro';
 				class='hidden'
 				id='projects-content-shadow'>
 			</div>
-			<div tabindex='0'>
+			<div
+				tabindex='0'
+				class='flex flex-col gap-md'>
 				<div
 					class='flex items-center cursor-pointer'
 					id='about-me'>
 					<h2 class='title'>Über mich</h2>
 					<Dropdown class='about-me-icon' />
 				</div>
-			</div>
-			<div
-				id='about-me-content'
-				tabindex='0'
-				class='hidden flex flex-col gap-sm'>
-				<span>
+				<div class='flex flex-col gap-sm pl-sm text-sm'>
 					<a
 						target='_blank'
 						href='#'>
 						Lebenslauf
-					</a>{' '}
-					|
+					</a>
 					<a
 						target='_blank'
 						href='https://github.com/ElianKas'>
 						Github
 					</a>
-				</span>
+					<a
+						target='_blank'
+						href='mailto:e.kasteleiner@outlook.de'>
+						E-Mail
+					</a>
+				</div>
+			</div>
+			<div
+				id='about-me-content'
+				tabindex='0'
+				class='hidden'>
 				<div class='flex flex-col gap-sm max-w-paragraph'>
-					<p>Ich arbeite seit ca. 2 Jahren selbstständig an Web-Projekten als Entwickler.</p>
-					<p>Immer wieder wirke ich auch bei der Konzeption und dem Design mit.</p>
+					<p>Ich lebe zur Zeit in Kassel und studiere XR Design & Entwicklung.</p>
+					<p>
+						Seit ca. 2 Jahren arbeite ich selbstständig an Web-Projekten als Entwickler bei
+						@apesolute.
+					</p>
+					<p>
+						Unter anderem wirke ich auch bei der Konzeption und dem Design von Projekten mit und
+						kommuniziere meine Ideen.
+					</p>
 					<p>
 						Neben der Webentwicklung bin ich aktiv am lernen neuer XR Technologien und beschäftige
 						mich mit Unity und C#.
