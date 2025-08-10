@@ -9,7 +9,7 @@ export const projects = [
 		pinClass: 'bg-gray',
 		description: [
 			'Ein sich ständig vergrößerndes Archiv der Universitäten Hessens, in dem Beiträge und Literatur zum Thema digitale Transformation in der Kunst- und dem Design gespeichert werden.',
-			'Die Webseite bietet Filter- und Suchmöglichkeiten für Nutzer und stellt Storyblok Inhalte dynamisch dar.',
+			'Die Webseite bietet Filter- und Suchmöglichkeiten für Nutzer und stellt Storyblok Inhalte dynamisch dar. Es werden regelmäßig neue Funktionen hinzugefügt und alte Darstellungen überarbeitet.',
 			'Entwickelt mit Nuxt, Tailwind und Gsap.',
 		],
 	},
@@ -23,7 +23,7 @@ export const projects = [
 		cardClass: 'rotate-[3.5deg] bg-secondary',
 		pinClass: 'bg-gray',
 		description: [
-			'Eine Community-Plattform für die Kunsthochschule Kassel, die es Studierenden ermöglicht, sich zu vernetzen und auszutauschen.',
+			'Eine Community-Plattform für die Kunsthochschule Kassel, die es Studierenden ermöglicht, sich zu vernetzen und auszutauschen. Unter anderem dient die Plattform als Informationsquelle für den jährlichen Rundgang der KHK.',
 			'Die Plattform bietet Funktionen wie einen anonymen Live-Chat mit Like-Funktion und eine Uploadmaske für Studenten, um ihre Events zu teilen.',
 			'Entwickelt wurde die Plattform mit Nuxt und TypeScript. Für Events und Live-Chat wurden Supabase tables und storage buckets eingesetzt. Sharp wird als Bild-Kompressor verwendet.',
 		],
