@@ -43,10 +43,13 @@ const { currentProject, projects } = Astro.props;
 								Webseite
 							</a>
 							{currentProject.github && (
+								<span>
+								 | 
+								</span>
 								<a
 									href={currentProject.github}
 									target='_blank'>
-									| Github
+									Github
 								</a>
 							)}
 						</div>
