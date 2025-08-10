@@ -2,43 +2,38 @@
 const { imageSrc, website, github, class: className } = Astro.props;
 ---
 
-<div
-	tabindex='0'
-	class={`${className} border aspect-[4/5]  max-w-[290px] w-full py-[25px] px-[20px] flex flex-col gap-sm shadow-md relative group hover:rotate-0 focus:rotate-0`}>
-	<slot name='pin' />
-	<div class='aspect-square w-full group-hover:hidden group-focus:hidden'>
-		<img
-			class='w-full h-full object-cover border'
-			src={imageSrc}
-			alt='Entwickelte Webseite, Kundenprojekt, Vorschau'
-		/>
-	</div>
-	<div class='flex flex-col gap-sm px-sm group-hover:hidden group-focus:hidden'>
-		<slot name='preview' />
-	</div>
+<div class='flex max-sm:flex-col gap-md items-center'>
 	<div
-		class='customScroll hidden flex-col gap-sm group-hover:flex group-focus:flex h-full overflow-y-auto'>
-		<slot name='details' />
-		<div>
-			<a
-				href={website}
-				target='_blank'
-				>Webseite</a
-			>{
-				github && (
-					<a
-						href={github}
-						target='_blank'>
-						| Github
-					</a>
-				)
-			}
+		tabindex='0'
+		class={`${className} border text-sm aspect-[4/5]  max-w-[290px] w-full py-[25px] px-[20px] flex flex-col gap-sm shadow-md relative `}>
+		<slot name='pin' />
+		<div class='aspect-square w-full'>
+			<img
+				class='w-full h-full object-cover border'
+				src={imageSrc}
+				alt='Entwickelte Webseite, Kundenprojekt, Vorschau'
+			/>
+		</div>
+		<div class='flex flex-col gap-sm px-sm'>
+			<slot name='preview' />
+			<div>
+				<a
+					href={website}
+					target='_blank'
+					>Webseite</a
+				>{
+					github && (
+						<a
+							href={github}
+							target='_blank'>
+							| Github
+						</a>
+					)
+				}
+			</div>
 		</div>
 	</div>
+	<div class='flex flex-col gap-sm max-w-paragraph w-full'>
+		<slot name='details' />
+	</div>
 </div>
-<style>
-	.customScroll {
-		scrollbar-width: thin;
-		scrollbar-color: white transparent;
-	}
-</style>

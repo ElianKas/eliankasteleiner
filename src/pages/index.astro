@@ -2,6 +2,9 @@
 import Layout from '../layouts/Layout.astro';
 import Cards from '../components/ui/cards.astro';
 import Dropdown from '../components/svg/dropdown.astro';
+export const prerender = false;
+const url = Astro.url;
+const project = url.searchParams.get('project') || 'digitale-perspektiven';
 ---
 
 <Layout>
@@ -11,7 +14,7 @@ import Dropdown from '../components/svg/dropdown.astro';
 			<div class='max-sm:hidden w-[1px] border-r border-stroke h-full row-span-full col-start-2'>
 			</div>
 			<div class='title'>Web-Entwickler <br /> Portfolio</div>
-			<div>Elian Kasteleiner</div>
+			<div>Elian Kasteleiner {project}</div>
 			<div class='flex flex-col gap-md'>
 				<div
 					class='flex items-center cursor-pointer'
@@ -20,10 +23,10 @@ import Dropdown from '../components/svg/dropdown.astro';
 					<Dropdown class='projects-icon rotate-180' />
 				</div>
 				<div class='pl-sm flex flex-col gap-sm text-sm'>
-					<div class='hover:font-bold'>Digitale Perspektiven</div>
-					<div class='hover:font-bold'>khk.community</div>
-					<div class='hover:font-bold'>Miteinander für Afrika</div>
-					<div class='hover:font-bold'>SmartOPS</div>
+					<a href='/?project=digitale-perspektiven'>Digitale Perspektiven</a>
+					<a href='/?project=khk-community'>khk.community</a>
+					<a href='/?project=miteinander-fuer-afrika'>Miteinander für Afrika</a>
+					<a href='/?project=smartops'>SmartOPS</a>
 				</div>
 			</div>
 			<Cards />

@@ -5,17 +5,16 @@ import Card from './card.astro';
 <div
 	id='projects-content'
 	tabindex='0'
-	class='flex gap-lg items-start focus:outline-none max-sm:justify-center flex-wrap text-sm sm:pl-sm max-sm:pb-md'>
+	class='flex gap-lg items-start focus:outline-none max-sm:justify-center flex-wrap sm:pl-sm max-sm:pb-md'>
 	<Card
 		website='https://www.digitaleperspektiven.net/'
 		imageSrc='/images/digitaleperspektiven.png'
 		class='rotate-[-4.5deg] bg-primary'>
 		<div
 			slot='pin'
-			class='group-hover:hidden group-focus:hidden bg-[#8053ea] shadow-md-strong w-[20px] aspect-square absolute top-[-5px] left-[110px] rounded-full'>
+			class='bg-[#8053ea] shadow-md-strong w-[20px] aspect-square absolute top-[-5px] left-[110px] rounded-full'>
 		</div>
 		<Fragment slot='preview'>
-			<h2 class='title'>Digitale Perspektiven</h2>
 			<div>Nuxt | Tailwind | Gsap</div>
 		</Fragment>
 		<Fragment slot='details'>
@@ -31,7 +30,7 @@ import Card from './card.astro';
 			<p>Entwickelt mit Nuxt, Tailwind CSS für das Styling und GSAP für die Animationen.</p>
 		</Fragment>
 	</Card>
-	<!-- <Card
+	<Card
 		website='https://www.khk.community/'
 		github='https://github.com/ElianKas/uni-network-nuxt'
 		imageSrc='/images/khkcommunity.png'
@@ -84,5 +83,5 @@ import Card from './card.astro';
 				E-Mail-Management.
 			</p>
 		</Fragment>
-	</Card> -->
+	</Card>
 </div>
