@@ -25,7 +25,7 @@ const currentProject = getProjectById(currentProjectId) ?? projects[0];
 						projects.map((project) => (
 							<a
 								href={`/?project=${project.id}`}
-								class={currentProject?.id === project.id ? 'font-bold' : 'hover:font-bold'}>
+								class={currentProject?.id === project.id ? 'text-primary' : 'hover:text-primary'}>
 								{project.title}
 							</a>
 						))

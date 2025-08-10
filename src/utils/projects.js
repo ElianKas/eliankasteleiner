@@ -6,7 +6,7 @@ export const projects = [
 		website: 'https://www.digitaleperspektiven.net/',
 		imageSrc: '/images/digitaleperspektiven.png',
 		cardClass: 'rotate-[-4.5deg] bg-primary',
-		pinClass: 'bg-[#8053ea] top-[-5px] left-[110px]',
+		pinClass: 'bg-[#8053ea]',
 		description: [
 			'Ein sich ständig vergrößerndes Archiv der Universitäten Hessens, in dem Beiträge und Literatur zum Thema digitale Transformation in der Kunst- und dem Design gespeichert werden.',
 			'Die Webseite bietet Filter- und Suchmöglichkeiten für Nutzer und stellt Storyblok Inhalte dynamisch dar.',
@@ -21,7 +21,7 @@ export const projects = [
 		github: 'https://github.com/ElianKas/uni-network-nuxt',
 		imageSrc: '/images/khkcommunity.png',
 		cardClass: 'rotate-[3.5deg] bg-secondary',
-		pinClass: 'bg-[#F0A11D] top-[-8px] right-[120px]',
+		pinClass: 'bg-[#F0A11D] ',
 		description: [
 			'Eine Community-Plattform für die Kunsthochschule Kassel, die es Studierenden ermöglicht, sich zu vernetzen und auszutauschen.',
 			'Die Plattform bietet Funktionen wie einen anonymen Live-Chat mit Like-Funktion und eine Uploadmaske für Studenten, um ihre Events zu teilen.',
@@ -35,7 +35,7 @@ export const projects = [
 		website: 'https://www.miteinander-fuer-afrika.de/',
 		imageSrc: '/images/afrika.png',
 		cardClass: 'rotate-[-7deg] bg-accent',
-		pinClass: 'bg-[#EF5F1D] top-[-6px] right-[70px]',
+		pinClass: 'bg-[#EF5F1D]',
 		description: [
 			'Ein Webprojekt, das sich für die Unterstützung von Menschen in Afrika einsetzt und dem e.V. Miteinander für Menschen in Afrika bei der Spendensammlung hilft.',
 			'Die Webseite bietet eine umfangreiche CMS Anbindung für Standorteingaben der Brunnen in Afrika, dynamischen Storyseiten mit hoher Gestaltungsfreiheit, Videointegration, Newsletter und vielem mehr.',
@@ -48,8 +48,8 @@ export const projects = [
 		tech: 'Astro | Gsap | Tailwind',
 		website: 'https://www.smartops.de/',
 		imageSrc: '/images/www.smartops.de_.png',
-		cardClass: 'rotate-[0deg] bg-primary',
-		pinClass: 'bg-[#4a90e2] top-[-5px] right-[150px]',
+		cardClass: 'rotate-[0deg] bg-tertiary',
+		pinClass: 'bg-[#4a90e2]',
 		description: [
 			'Eine starke Online-Präsenz für die Energieberatungsfirma SmartOPS.',
 			'Derzeit in der Entwicklung ist ein zugehöriger Datencenter für die Einsicht von Energiedaten aus Deutschland, sowie für die Prognose von Energieverbrauchswerten.',

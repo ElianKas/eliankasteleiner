@@ -19,20 +19,14 @@ export interface Props {
 const { currentProject, projects } = Astro.props;
 ---
 
-<div class='flex gap-md items-center max-sm flex-wrap max-sm:justify-center sm:pl-sm'>
+<div class='flex gap-md items-start max-sm flex-wrap max-sm:justify-center sm:pl-sm'>
 	<div class='max-w-[320px] w-full aspect-[4/5] relative text-sm'>
 		{
 			projects.map((project) => (
+				
 				<div
 					class={`${project.cardClass} h-full w-full py-[25px] px-[20px] flex flex-col gap-sm border shadow-md absolute inset-0`}
 					class:list={[{ 'z-[99]': currentProject.id === project.id }]}>
-					<div
-						class=' shadow-md-strong w-[20px] aspect-square absolute rounded-full'
-						class:list={[
-							{ [project.pinClass]: true },
-							{ hidden: currentProject.id !== project.id },
-						]}
-					/>
 					<div class='aspect-square w-full'>
 						<img
 							class='w-full h-full object-cover border'
@@ -58,6 +52,13 @@ const { currentProject, projects } = Astro.props;
 						</div>
 					</div>
 				</div>
+				<div
+					class=' shadow-md-strong w-[20px] aspect-square absolute rounded-full left-[50%] top-[-5px] translate-x-[-50%] z-[99]'
+					class:list={[
+						{ [project.pinClass]: true },
+						{ hidden: currentProject.id !== project.id },
+					]}
+				/>
 			))
 		}
 	</div>
@@ -68,3 +69,8 @@ const { currentProject, projects } = Astro.props;
 		</div>
 	</div>
 </div>
+<style>
+	a:hover {
+		color: var(--color-bg);
+	}
+</style>

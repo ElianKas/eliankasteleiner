@@ -4,6 +4,7 @@
     --color-bg: #fcf2f2;
     --color-primary: #ff644f;
     --color-secondary: #f8cd73;
+    --color-tertiary: #4da3ff;
     --color-accent: #a7d269;
     --color-stroke: #A5A5A5;
     --spacing-xs: 0.5rem;
@@ -34,5 +35,5 @@ a {
 }
 
 a:hover {
-    color: var(--color-stroke);
+    color: var(--color-primary);
 }
