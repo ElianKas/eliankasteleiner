@@ -21,8 +21,7 @@ export interface Props {
 const { projects, currentProject } = Astro.props;
 ---
 
-<div class='relative text-sm max-sm:pb-md'>
-	<div class='max-w-[320px] w-full aspect-[4/5]'></div>
+<div class='max-sm:pb-md'>
 	<Card
 		projects={projects}
 		currentProject={currentProject}

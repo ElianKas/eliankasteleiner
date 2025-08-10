@@ -19,44 +19,48 @@ export interface Props {
 const { currentProject, projects } = Astro.props;
 ---
 
-<div class='flex gap-md items-center absolute left-md top-0 right-0 w-full h-full'>
-	<div class='max-w-[320px] w-full aspect-[4/5]'></div>
-	{
-		projects.map((project) => (
-			<div
-				class={`${project.cardClass} border text-sm aspect-[4/5] max-w-[320px] w-full py-[25px] px-[20px] flex flex-col gap-sm shadow-md absolute inset-0`}
-				class:list={[{ 'z-[99]': currentProject.id === project.id }]}>
+<div class='flex gap-md items-center max-sm flex-wrap max-sm:justify-center sm:pl-sm'>
+	<div class='max-w-[320px] w-full aspect-[4/5] relative text-sm'>
+		{
+			projects.map((project) => (
 				<div
-					class=' shadow-md-strong w-[20px] aspect-square absolute rounded-full'
-					class:list={[{ [project.pinClass]: true }, { hidden: currentProject.id !== project.id }]}
-				/>
-				<div class='aspect-square w-full'>
-					<img
-						class='w-full h-full object-cover border'
-						src={project.imageSrc}
-						alt='Entwickelte Webseite, Kundenprojekt, Vorschau'
+					class={`${project.cardClass} h-full w-full py-[25px] px-[20px] flex flex-col gap-sm border shadow-md absolute inset-0`}
+					class:list={[{ 'z-[99]': currentProject.id === project.id }]}>
+					<div
+						class=' shadow-md-strong w-[20px] aspect-square absolute rounded-full'
+						class:list={[
+							{ [project.pinClass]: true },
+							{ hidden: currentProject.id !== project.id },
+						]}
 					/>
-				</div>
-				<div class='flex flex-col gap-sm px-sm'>
-					<div>{project.tech}</div>
-					<div>
-						<a
-							href={currentProject.website}
-							target='_blank'>
-							Webseite
-						</a>
-						{currentProject.github && (
+					<div class='aspect-square w-full'>
+						<img
+							class='w-full h-full object-cover border'
+							src={project.imageSrc}
+							alt='Entwickelte Webseite, Kundenprojekt, Vorschau'
+						/>
+					</div>
+					<div class='flex flex-col gap-sm px-sm'>
+						<div>{project.tech}</div>
+						<div>
 							<a
-								href={currentProject.github}
+								href={currentProject.website}
 								target='_blank'>
-								| Github
+								Webseite
 							</a>
-						)}
+							{currentProject.github && (
+								<a
+									href={currentProject.github}
+									target='_blank'>
+									| Github
+								</a>
+							)}
+						</div>
 					</div>
 				</div>
-			</div>
-		))
-	}
+			))
+		}
+	</div>
 	<div class='flex flex-col gap-sm max-w-paragraph text-md'>
 		<h2 class='title'>{currentProject.title}</h2>
 		<div class='flex flex-col gap-sm'>
