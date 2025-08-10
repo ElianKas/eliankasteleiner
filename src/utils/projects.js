@@ -37,7 +37,7 @@ export const projects = [
 		cardClass: 'rotate-[-7deg] bg-accent',
 		pinClass: 'bg-gray',
 		description: [
-			'Ein Webprojekt, das sich für die Unterstützung von Menschen in Afrika einsetzt und dem e.V. Miteinander für Menschen in Afrika bei der Spendensammlung hilft.',
+			'Ein Webprojekt, das sich für die Unterstützung von Menschen in Kamerun einsetzt und dem e.V. Miteinander für Menschen in Afrika bei der Spendensammlung hilft.',
 			'Die Webseite bietet eine umfangreiche CMS Anbindung für Standorteingaben der Brunnen in Afrika, dynamischen Storyseiten mit hoher Gestaltungsfreiheit, Videointegration, Newsletter und vielem mehr.',
 			'Entwickelt mit Nuxt, Storyblok CMS und Nodemailer für das E-Mail-Management.',
 		],
