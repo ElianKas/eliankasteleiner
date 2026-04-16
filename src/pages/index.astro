@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Cards from '../components/ui/cards.astro';
+import Tv from '../components/ui/tv.astro';
 import { projects, getProjectById } from '../utils/projects.js';
 
 export const prerender = false;
@@ -32,10 +33,11 @@ const currentProject = getProjectById(currentProjectId) ?? projects[0];
 					}
 				</div>
 			</div>
-			<Cards
+			<Tv />
+			<!-- <Cards
 				projects={projects}
 				currentProject={currentProject}
-			/>
+			/> -->
 			<div class='flex flex-col gap-sm'>
 				<h2 class='title'>Über mich</h2>
 				<div class='flex flex-col gap-sm pl-sm text-sm'>
