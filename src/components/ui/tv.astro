@@ -6,70 +6,92 @@
 
 <script is:inline type="module">
   import * as THREE from "../../../node_modules/three";
-  import { GLTFLoader } from '../../../node_modules/three/examples/jsm/loaders/GLTFLoader.js';
+  import { GLTFLoader } from "../../../node_modules/three/examples/jsm/loaders/GLTFLoader.js";
+  import { OrbitControls } from "../../../node_modules/three/examples/jsm/controls/OrbitControls.js";
+
   const container = document.getElementById("three-container");
 
-  const scene = new THREE.Scene();  
+  if (!container) {
+    console.error("Three container not found");
+  } else {
+    const scene = new THREE.Scene();
+    scene.background = new THREE.Color(0xf3f3f3);
 
-  const camera = new THREE.PerspectiveCamera(
-    75,
-    container.clientWidth / container.clientHeight,
-    0.1,
-    1000,
-  );
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.7);
+    scene.add(ambientLight);
 
-  const renderer = new THREE.WebGLRenderer({ antialias: true });
-  renderer.setSize(container.clientWidth, container.clientHeight);
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 1.0);
+    directionalLight.position.set(5, 8, 6);
+    scene.add(directionalLight);
 
-  container.appendChild(renderer.domElement);
+    const initialWidth = container.clientWidth || 800;
+    const initialHeight = container.clientHeight || 500;
 
-  camera.position.z = 5;
+    const camera = new THREE.PerspectiveCamera(60, initialWidth / initialHeight, 0.1, 2000);
+    camera.position.set(0, 0, 5);
 
-  const loader = new GLTFLoader();
-  loader.load('/models/tv.glb', (gltf) => {
-    scene.add(gltf.scene);
-  });
+    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setSize(initialWidth, initialHeight);
+    container.appendChild(renderer.domElement);
+    const controls = new OrbitControls(camera, renderer.domElement);
 
-  const mixer = new THREE.AnimationMixer(gltf.scene);
+    const loader = new GLTFLoader();
+    let mixer;
 
-  const actions = {};
+    loader.load(
+      "/models/tv.glb",
+      (gltf) => {
+        const model = gltf.scene;
+        scene.add(model);
 
-  gltf.animations.forEach((clip) => {
-    actions[clip.name] = mixer.clipAction(clip);
-  });
+        const box = new THREE.Box3().setFromObject(model);
+        const center = box.getCenter(new THREE.Vector3());
+        model.position.sub(center);
 
-  const clock = new THREE.Clock();
+        const size = box.getSize(new THREE.Vector3());
+        const maxDim = Math.max(size.x, size.y, size.z) || 1;
+        const fov = camera.fov * (Math.PI / 180);
+        const cameraDistance = (maxDim * 0.5) / Math.tan(fov * 0.5);
 
-  // Beispiel:
-  actions['Signal'].play();
+        camera.position.set(0, maxDim * 0.1, cameraDistance * 1.6);
+        camera.near = Math.max(0.01, cameraDistance / 100);
+        camera.far = cameraDistance * 100;
+        camera.lookAt(0, 0, 0);
+        camera.updateProjectionMatrix();
 
-  // Test Cube
-  const geometry = new THREE.BoxGeometry();
-  const material = new THREE.MeshBasicMaterial({ wireframe: true });
-  const cube = new THREE.Mesh(geometry, material);
-  scene.add(cube);
+        if (gltf.animations.length > 0) {
+          mixer = new THREE.AnimationMixer(model);
+          const firstAction = mixer.clipAction(gltf.animations[0]);
+          firstAction.play();
+        }
+      },
+      undefined,
+      (error) => {
+        console.error("Failed to load /models/tv.glb", error);
+      }
+    );
 
-  function animate() {
-    requestAnimationFrame(animate);
+    const clock = new THREE.Clock();
 
-    const delta = clock.getDelta();
-    mixer.update(delta);
+    function animate() {
+      requestAnimationFrame(animate);
+      const delta = clock.getDelta();
+      if (mixer) mixer.update(delta);
 
-    cube.rotation.x += 0.01;
-    cube.rotation.y += 0.01;
+      controls.update();
+      renderer.render(scene, camera);
+    }
 
-    renderer.render(scene, camera);
+    animate();
+
+    window.addEventListener("resize", () => {
+      const width = container.clientWidth || 800;
+      const height = container.clientHeight || 500;
+      camera.aspect = width / height;
+      camera.updateProjectionMatrix();
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      renderer.setSize(width, height);
+    });
   }
-
-  animate();
-
-  window.addEventListener("resize", () => {
-    const width = container.clientWidth;
-    const height = container.clientHeight;
-
-    camera.aspect = width / height;
-    camera.updateProjectionMatrix();
-
-    renderer.setSize(width, height);
-  });
 </script>
